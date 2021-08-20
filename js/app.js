@@ -21,6 +21,7 @@ function upgrade(info){
   } else if(info == 'cost'){
     deliveryCost.innerText = 20;
   }
+  document.getElementById('promo-btn').removeAttribute('disabled',true);
   calculateTotal();
 }
 // calculate total price //
@@ -35,6 +36,7 @@ document.getElementById('promo-btn').addEventListener('click',function(){
   let cost = parseInt(totalCost[totalCost.length-1].innerText);
   if(promoInput.value == 'stevekaku'){
     totalCost[totalCost.length-1].innerText = cost - (cost/5);
+    document.getElementById('promo-btn').setAttribute('disabled', true);
   }
   promoInput.value = '';
 });
