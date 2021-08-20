@@ -35,21 +35,21 @@
           <!-- Memory part -->
           <div class="my-5">
             <h4><b>Memory</b></h4>
-            <button class="btn btn-outline-dark px-4">8GB unified memory</button>
-            <button class="btn btn-outline-dark px-4">16GB unified memory</button>
+            <button onclick="upgrade('8gb')" class="btn btn-outline-dark px-4">8GB unified memory</button>
+            <button onclick="upgrade('16gb')" class="btn btn-outline-dark px-4">16GB unified memory</button>
           </div>
           <!-- storage part -->
           <div class="my-5">
             <h4><b>Storage</b></h4>
-            <button class="btn btn-outline-dark px-4">256GB SSD storage</button>
-            <button class="btn btn-outline-dark px-4">512GB SSD storage</button>
-            <button class="btn btn-outline-dark px-4">1TB SSD storage</button>
+            <button onclick="upgrade('256gb')" class="btn btn-outline-dark px-4">256GB SSD storage</button>
+            <button onclick="upgrade('512gb')" class="btn btn-outline-dark px-4">512GB SSD storage</button>
+            <button onclick="upgrade('1tb')" class="btn btn-outline-dark px-4">1TB SSD storage</button>
           </div>
           <!-- delivery option part -->
           <div class="my-5">
             <h4><b>Choose your delivery option</b></h4>
-            <button class="btn btn-outline-dark px-4">Friday, Aug 25 FREE Prime Delivery</button>
-            <button class="btn btn-outline-dark px-4">Friday, Aug 21 Delivery Charge $20</button>
+            <button onclick="upgrade('free')" class="btn btn-outline-dark px-4">Friday, Aug 25 FREE Prime Delivery</button>
+            <button onclick="upgrade('cost')" class="btn btn-outline-dark px-4">Friday, Aug 21 Delivery Charge $20</button>
           </div>
           <!-- reciept part -->
           <div class="mt-5">
@@ -57,25 +57,25 @@
               <tbody>
                 <tr>
                   <td>Base Price</td>
-                  <td>$ <span>1299</span></td>
+                  <td>$ <span id="base-price">1299</span></td>
                 </tr>
                 <tr>
                   <td>Extra Memory Cost</td>
-                  <td>$ <span>0</span></td>
+                  <td>$ <span id="memory-cost">0</span></td>
                 </tr>
                 <tr>
                   <td>Extra Storage Cost</td>
-                  <td>$ <span>0</span></td>
+                  <td>$ <span id="storage-cost">0</span></td>
                 </tr>
                 <tr>
                   <td>Delivery Charge</td>
-                  <td>$ <span>0</span></td>
+                  <td>$ <span id="delivery-cost">0</span></td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <td>Total Price</td>
-                  <td>$ <span>1299</span></td>
+                  <td>$ <span class="total-cost">1299</span></td>
                 </tr>
               </tfoot>
             </table>
@@ -90,10 +90,10 @@
     <section class="mb-2 px-5">
       <div class="container-fluid px-5">
         <h4 class="fw-bold">Add Promo Code</h4>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="add your promo code here" aria-label="Search">
-          <button class="btn btn-danger" type="submit">Apply</button>
-        </form>
+        <div class="d-flex">
+          <input id="promo-input" class="form-control me-2" type="search" aria-label="Search">
+          <button id="promo-btn" class="btn btn-danger" type="submit">Apply</button>
+        </div>
       </div>
       <hr>
     </section>
@@ -101,7 +101,7 @@
   <!-- footer part -->
   <footer>
     <section class="mb-5">
-      <h1 class="fw-bold text-center">Total: $<span>1299</span></h1>
+      <h1 class="fw-bold text-center">Total: $<span class="total-cost">1299</span></h1>
     </section>
   </footer>
   <!-- Bootstrap js script -->
